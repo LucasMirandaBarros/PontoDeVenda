@@ -8,13 +8,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value = "/produto-controller")
+@RequestMapping(value = "/produto")
 public class ProdutoController {
 
     @Autowired
     private ProdutoService produtoService;
 
-    @PostMapping(value = "/produto")
+    @PostMapping(value = "/salvar")
     public Produto produto(@RequestBody Produto produto){
         return produtoService.salvarProduto(produto);
 
