@@ -5,6 +5,8 @@ import com.primeirotrampodev.Pontodevenda.Service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value ="/usuario")
 public class UsuarioController {
@@ -22,5 +24,12 @@ public class UsuarioController {
     public Usuario atualizarUsuario(@RequestBody Usuario usuario){
         return usuarioService.atualizarUsuario(usuario);
     }
+
+    @GetMapping("/list")
+    public List<Usuario> usuarioList(){
+        return usuarioService.usuarioList();
+    }
+
+
 
 }
