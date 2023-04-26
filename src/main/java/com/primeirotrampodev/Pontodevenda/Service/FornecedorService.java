@@ -15,4 +15,9 @@ public class FornecedorService {
 
         return fornecedorRepository.save(fornecedor);
     }
+
+    public Fornecedor atualizarFornecedor(Fornecedor fornecedor){
+
+        return fornecedorRepository.save(fornecedor);
+    }
 }
