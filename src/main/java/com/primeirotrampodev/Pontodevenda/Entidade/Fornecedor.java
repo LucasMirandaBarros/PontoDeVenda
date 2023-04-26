@@ -7,15 +7,10 @@ import javax.persistence.Id;
 
 @Entity
 public class Fornecedor {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-
     private Integer id;
-
     private String nome;
-
     private String telefone;
 
 
