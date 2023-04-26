@@ -31,5 +31,10 @@ public class FornecedorController {
 
         return fornecedorService.listarTodosFornecedores();
     }
+    @DeleteMapping(value = "/deletar-fornecedor")
+    public void deletafornecedor(@RequestBody Fornecedor fornecedor){
+        fornecedorService.deletarFornecedor(fornecedor);
+    }
+
 }
 

@@ -27,4 +27,7 @@ public class FornecedorService {
 
         return fornecedorRepository.findAll();
     }
+    public void deletarFornecedor(Fornecedor fornecedor){
+        fornecedorRepository.delete(fornecedor);
+    }
 }
