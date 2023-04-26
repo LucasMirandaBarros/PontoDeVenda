@@ -16,8 +16,14 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @PostMapping(value = "/salvar")
-    public Usuario criarUsuario(@RequestBody Usuario usuario){
+    public Usuario criarUsuario(@RequestBody Usuario usuario) {
+
         return usuarioService.criarUsuario(usuario);
+    }
+
+    @PostMapping(value = "/atualizar")
+    public Usuario atualizarUsuario(@RequestBody Usuario usuario){
+        return usuarioService.atualizarUsuario(usuario);
     }
 
 }
