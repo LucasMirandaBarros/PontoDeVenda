@@ -19,6 +19,11 @@ public class FornecedorController {
     public Fornecedor getFornecedor(@RequestBody Fornecedor fornecedor) {
 
         return fornecedorService.getFornecedor(fornecedor);
+    }
+    @PostMapping(value = "/atualizar")
+    public Fornecedor editFornecedor(@RequestBody Fornecedor fornecedor){
+
+        return fornecedorService.atualizarFornecedor(fornecedor);
 
     }
 }
