@@ -25,7 +25,7 @@ public class UsuarioController {
         return usuarioService.atualizarUsuario(usuario);
     }
 
-    @GetMapping("/list")
+    @GetMapping(value = "/list")
     public List<Usuario> usuarioList(){
         return usuarioService.usuarioList();
     }
