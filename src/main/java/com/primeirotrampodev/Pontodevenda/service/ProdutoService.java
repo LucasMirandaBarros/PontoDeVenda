@@ -5,6 +5,8 @@ import com.primeirotrampodev.Pontodevenda.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProdutoService {
 
@@ -17,5 +19,13 @@ public class ProdutoService {
 
     public Produto editarProduto(Produto produto){
         return produtoRepository.save(produto);
+    }
+
+    public List<Produto> listaDeProdutos() {
+        return produtoRepository.findAll();
+    }
+
+    public void deletarProduto(Produto produto) {
+        produtoRepository.delete(produto);
     }
 }
