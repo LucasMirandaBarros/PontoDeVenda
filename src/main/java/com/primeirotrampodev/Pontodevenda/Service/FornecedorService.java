@@ -5,6 +5,8 @@ import com.primeirotrampodev.Pontodevenda.Repository.FornecedorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class FornecedorService {
 
@@ -19,5 +21,13 @@ public class FornecedorService {
     public Fornecedor atualizarFornecedor(Fornecedor fornecedor){
 
         return fornecedorRepository.save(fornecedor);
+    }
+
+    public List<Fornecedor> listarTodosFornecedores(){
+
+        return fornecedorRepository.findAll();
+    }
+    public void deletarFornecedor(Fornecedor fornecedor){
+        fornecedorRepository.delete(fornecedor);
     }
 }

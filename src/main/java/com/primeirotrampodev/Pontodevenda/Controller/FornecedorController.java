@@ -5,6 +5,8 @@ import com.primeirotrampodev.Pontodevenda.Service.FornecedorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping(value = "/fornecedor")
 public class FornecedorController {
@@ -23,5 +25,16 @@ public class FornecedorController {
         return fornecedorService.atualizarFornecedor(fornecedor);
 
     }
+
+    @GetMapping(value = "/lista-fornecedores")
+    public List<Fornecedor> fornecedorList(){
+
+        return fornecedorService.listarTodosFornecedores();
+    }
+    @DeleteMapping(value = "/deletar-fornecedor")
+    public void deletafornecedor(@RequestBody Fornecedor fornecedor){
+        fornecedorService.deletarFornecedor(fornecedor);
+    }
+
 }
 
