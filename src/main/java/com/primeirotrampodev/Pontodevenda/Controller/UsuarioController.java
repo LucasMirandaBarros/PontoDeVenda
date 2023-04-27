@@ -30,7 +30,7 @@ public class UsuarioController {
         return usuarioService.usuarioList();
     }
 
-    @DeleteMapping(value = "delete")
+    @DeleteMapping(value = "/delete")
     public void deleteUsuario(@RequestBody Usuario usuario){
         usuarioService.usuarioDelete(usuario);
     }
