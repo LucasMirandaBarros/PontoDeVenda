@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.OptionalInt;
 
 @Service
 public class UsuarioService {
@@ -23,16 +25,23 @@ public class UsuarioService {
 
     }
 
-    public Usuario atualizarUsuario(Usuario usuario){
+    public Usuario atualizarUsuario(UsuarioDto usuarioDto){
+
+        Usuario usuario = UsuarioConverter.usuarioDtoToUsuario(usuarioDto);
+
         return usuarioRepository.save(usuario);
     }
 
     public List<Usuario> usuarioList(){
+
         return usuarioRepository.findAll();
     }
 
-    public void usuarioDelete(Usuario usuario){
-        usuarioRepository.delete(usuario);
+    public void usuarioDelete(Integer idUsuario){
+
+        Optional<Usuario> usuario = usuarioRepository.findById(idUsuario);
+
+        usuarioRepository.delete(usuario.get());
 
     }
 }

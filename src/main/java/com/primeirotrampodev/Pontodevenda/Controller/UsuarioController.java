@@ -22,18 +22,21 @@ public class UsuarioController {
     }
 
     @PutMapping(value = "/atualizar")
-    public Usuario atualizarUsuario(@RequestBody Usuario usuario){
-        return usuarioService.atualizarUsuario(usuario);
+    public Usuario atualizarUsuario(@RequestBody UsuarioDto usuarioDto){
+
+        return usuarioService.atualizarUsuario(usuarioDto);
     }
 
     @GetMapping(value = "/list")
     public List<Usuario> usuarioList(){
+
         return usuarioService.usuarioList();
     }
 
     @DeleteMapping(value = "/delete")
-    public void deleteUsuario(@RequestBody Usuario usuario){
-        usuarioService.usuarioDelete(usuario);
+    public void deleteUsuario(@RequestParam("id")Integer idUsuario){
+
+        usuarioService.usuarioDelete(idUsuario);
     }
 
 
