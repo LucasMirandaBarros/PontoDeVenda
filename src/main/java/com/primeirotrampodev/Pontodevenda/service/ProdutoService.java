@@ -1,11 +1,14 @@
 package com.primeirotrampodev.Pontodevenda.Service;
 
 import com.primeirotrampodev.Pontodevenda.Entidade.Produto;
+import com.primeirotrampodev.Pontodevenda.converter.ProdutoConverter;
+import com.primeirotrampodev.Pontodevenda.dto.ProdutoDto;
 import com.primeirotrampodev.Pontodevenda.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProdutoService {
@@ -13,11 +16,17 @@ public class ProdutoService {
     @Autowired
     private ProdutoRepository produtoRepository;
 
-    public Produto salvarProduto(Produto produto){
+    public Produto salvarProduto(ProdutoDto produtoDto){
+
+        Produto produto = ProdutoConverter.produtoDtoToProduto(produtoDto);
+
         return produtoRepository.save(produto);
     }
 
-    public Produto editarProduto(Produto produto){
+    public Produto editarProduto(ProdutoDto produtoDto){
+
+        Produto produto = ProdutoConverter.produtoDtoToProduto(produtoDto);
+
         return produtoRepository.save(produto);
     }
 
@@ -25,7 +34,10 @@ public class ProdutoService {
         return produtoRepository.findAll();
     }
 
-    public void deletarProduto(Produto produto) {
-        produtoRepository.delete(produto);
+    public void deletarProduto(Integer idProduto) {
+
+        Optional<Produto> produto = produtoRepository.findById(idProduto);
+
+        produtoRepository.delete(produto.get());
     }
 }
