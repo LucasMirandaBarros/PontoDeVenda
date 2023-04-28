@@ -2,6 +2,7 @@ package com.primeirotrampodev.Pontodevenda.Controller;
 
 import com.primeirotrampodev.Pontodevenda.Entidade.Usuario;
 import com.primeirotrampodev.Pontodevenda.Service.UsuarioService;
+import com.primeirotrampodev.Pontodevenda.dto.UsuarioDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,9 +16,9 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
     @PostMapping(value = "/salvar")
-    public Usuario criarUsuario(@RequestBody Usuario usuario) {
+    public Usuario criarUsuario(@RequestBody UsuarioDto usuarioDto) {
 
-        return usuarioService.criarUsuario(usuario);
+        return usuarioService.criarUsuario(usuarioDto);
     }
 
     @PutMapping(value = "/atualizar")
