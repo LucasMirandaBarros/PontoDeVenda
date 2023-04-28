@@ -32,9 +32,9 @@ public class FornecedorController {
 
         return fornecedorService.listarTodosFornecedores();
     }
-    @DeleteMapping(value = "/deletar-fornecedor")
-    public void deletafornecedor(@RequestBody FornecedorDto fornecedorDto){
-        fornecedorService.deletarFornecedor(fornecedorDto);
+    @GetMapping(value = "/deletar-fornecedor")
+    public void deletafornecedor(@RequestParam("id") Integer id){
+        fornecedorService.deletarFornecedor(id);
     }
 
 }

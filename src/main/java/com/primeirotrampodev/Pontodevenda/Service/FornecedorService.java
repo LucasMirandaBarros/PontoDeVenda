@@ -33,9 +33,8 @@ public class FornecedorService {
 
         return fornecedorRepository.findAll();
     }
-    public void deletarFornecedor(FornecedorDto fornecedorDto){
+    public void deletarFornecedor(Integer id){
 
-        Fornecedor fornecedor = FornecedorConverter.fornecedorDtotoFornecedor(fornecedorDto);
-        fornecedorRepository.delete(fornecedor);
+        fornecedorRepository.deleteById(id);
     }
 }
