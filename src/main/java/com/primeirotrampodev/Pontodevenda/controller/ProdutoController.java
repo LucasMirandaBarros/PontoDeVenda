@@ -22,8 +22,8 @@ public class ProdutoController {
     }
 
     @PutMapping(value = "/editar")
-    public Produto editarProduto(@RequestBody Produto produto){
-        return produtoService.editarProduto(produto);
+    public Produto editarProduto(@RequestBody ProdutoDto produtoDto){
+        return produtoService.editarProduto(produtoDto);
     }
 
     @GetMapping(value = "/lista")
@@ -31,9 +31,9 @@ public class ProdutoController {
         return produtoService.listaDeProdutos();
     }
 
-    @DeleteMapping(value = "/deletar")
-    public void deletarProduto(@RequestBody Produto produto){
-        produtoService.deletarProduto(produto);
+    @GetMapping(value = "/deletar")
+    public void deletarProduto(@RequestParam("id") Integer id){
+        produtoService.deletarProduto(id);
     }
 
 }
