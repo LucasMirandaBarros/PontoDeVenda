@@ -21,9 +21,9 @@ public class FornecedorController {
         return fornecedorService.getFornecedor(fornecedorDto);
     }
     @PutMapping(value = "/atualizar")
-    public Fornecedor editFornecedor(@RequestBody Fornecedor fornecedor){
+    public Fornecedor editFornecedor(@RequestBody FornecedorDto fornecedorDto){
 
-        return fornecedorService.atualizarFornecedor(fornecedor);
+        return fornecedorService.atualizarFornecedor(fornecedorDto);
 
     }
 
@@ -33,8 +33,8 @@ public class FornecedorController {
         return fornecedorService.listarTodosFornecedores();
     }
     @DeleteMapping(value = "/deletar-fornecedor")
-    public void deletafornecedor(@RequestBody Fornecedor fornecedor){
-        fornecedorService.deletarFornecedor(fornecedor);
+    public void deletafornecedor(@RequestBody FornecedorDto fornecedorDto){
+        fornecedorService.deletarFornecedor(fornecedorDto);
     }
 
 }

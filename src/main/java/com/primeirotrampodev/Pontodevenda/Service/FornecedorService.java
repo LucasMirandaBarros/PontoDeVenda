@@ -22,7 +22,9 @@ public class FornecedorService {
         return fornecedorRepository.save(fornecedor);
     }
 
-    public Fornecedor atualizarFornecedor(Fornecedor fornecedor){
+    public Fornecedor atualizarFornecedor(FornecedorDto fornecedorDto){
+
+        Fornecedor fornecedor = FornecedorConverter.fornecedorDtotoFornecedor(fornecedorDto);
 
         return fornecedorRepository.save(fornecedor);
     }
@@ -31,7 +33,9 @@ public class FornecedorService {
 
         return fornecedorRepository.findAll();
     }
-    public void deletarFornecedor(Fornecedor fornecedor){
+    public void deletarFornecedor(FornecedorDto fornecedorDto){
+
+        Fornecedor fornecedor = FornecedorConverter.fornecedorDtotoFornecedor(fornecedorDto);
         fornecedorRepository.delete(fornecedor);
     }
 }
