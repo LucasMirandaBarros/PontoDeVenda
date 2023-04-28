@@ -2,6 +2,7 @@ package com.primeirotrampodev.Pontodevenda.Controller;
 
 import com.primeirotrampodev.Pontodevenda.Entidade.Fornecedor;
 import com.primeirotrampodev.Pontodevenda.Service.FornecedorService;
+import com.primeirotrampodev.Pontodevenda.dto.FornecedorDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,9 +16,9 @@ public class FornecedorController {
     private FornecedorService fornecedorService;
 
     @PostMapping(value = "/salvar")
-    public Fornecedor getFornecedor(@RequestBody Fornecedor fornecedor) {
+    public Fornecedor getFornecedor(@RequestBody FornecedorDto fornecedorDto) {
 
-        return fornecedorService.getFornecedor(fornecedor);
+        return fornecedorService.getFornecedor(fornecedorDto);
     }
     @PutMapping(value = "/atualizar")
     public Fornecedor editFornecedor(@RequestBody Fornecedor fornecedor){
