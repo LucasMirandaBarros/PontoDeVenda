@@ -1,6 +1,6 @@
 package com.primeirotrampodev.Pontodevenda.repository;
 
-import com.primeirotrampodev.Pontodevenda.entity.Produto;
+import com.primeirotrampodev.Pontodevenda.Entidade.Produto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,9 +1,11 @@
-package com.primeirotrampodev.Pontodevenda.service;
+package com.primeirotrampodev.Pontodevenda.Service;
 
-import com.primeirotrampodev.Pontodevenda.entity.Produto;
+import com.primeirotrampodev.Pontodevenda.Entidade.Produto;
 import com.primeirotrampodev.Pontodevenda.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ProdutoService {
@@ -13,5 +15,17 @@ public class ProdutoService {
 
     public Produto salvarProduto(Produto produto){
         return produtoRepository.save(produto);
+    }
+
+    public Produto editarProduto(Produto produto){
+        return produtoRepository.save(produto);
+    }
+
+    public List<Produto> listaDeProdutos() {
+        return produtoRepository.findAll();
+    }
+
+    public void deletarProduto(Produto produto) {
+        produtoRepository.delete(produto);
     }
 }

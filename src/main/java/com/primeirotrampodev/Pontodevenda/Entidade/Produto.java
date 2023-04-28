@@ -1,4 +1,4 @@
-package com.primeirotrampodev.Pontodevenda.entity;
+package com.primeirotrampodev.Pontodevenda.Entidade;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
